@@ -49,12 +49,6 @@ export function Hero() {
           >
             Watch Films
           </Link>
-          <a
-            href="#upload"
-            className="rounded-full glass-card px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:gold-glow"
-          >
-            Upload Memories
-          </a>
         </div>
 
         <div className="animate-fade-in delay-500 absolute bottom-10 left-1/2 -translate-x-1/2 text-[var(--gold-light)]/60">

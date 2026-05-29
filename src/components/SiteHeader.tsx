@@ -25,12 +25,12 @@ export function SiteHeader() {
           <a href="#about" className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]">About</a>
         </nav>
 
-        <a
-          href="#upload"
+        <Link
+          to="/films"
           className="rounded-full bg-gradient-gold px-5 py-2 text-sm font-semibold text-[oklch(0.20_0.09_16)] shadow-luxury transition-transform hover:scale-[1.03]"
         >
-          Upload Memories
-        </a>
+          Watch Films
+        </Link>
       </div>
     </header>
   );
