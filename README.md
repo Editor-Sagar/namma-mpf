@@ -9,7 +9,7 @@
 </a>
 
 <a href="https://www.instagram.com/millions_photography_films/">
-<img src="https://img.shields.io/badge/📸_Instagram-Follow_MP_Films-E1306C?style=for-the-badge&logo=instagram&logoColor=white">
+<img src="https://img.shields.io/badge/📸_Instagram-Follow_MPF-E1306C?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 
 <a href="https://g.page/r/CVi6K9ry2e87EBM/review">
