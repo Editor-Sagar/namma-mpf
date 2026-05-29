@@ -1,9 +1,5 @@
 <p align="center">
 
-<a href="https://github.com/CandidVideoEditor/namma-mpf">
-<img src="https://img.shields.io/badge/🚀_Namma_MPF-View_Project-D4AF37?style=for-the-badge&logo=github&logoColor=black">
-</a>
-
 <a href="https://millionsphotography.com/">
 <img src="https://img.shields.io/badge/🌐_Official_Website-MPF-800020?style=for-the-badge&logo=googlechrome&logoColor=white">
 </a>
