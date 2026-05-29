@@ -5,7 +5,7 @@
 </a>
 
 <a href="https://www.instagram.com/millions_photography_films/">
-<img src="https://img.shields.io/badge/_Instagram-Follow_MPF-E1306C?style=for-the-badge&logo=instagram&logoColor=white">
+<img src="https://img.shields.io/badge/_Instagram-Follow_MPF-E13020?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
 
 <a href="https://g.page/r/CVi6K9ry2e87EBM/review">
@@ -13,7 +13,7 @@
 </a>
 
 <a href="https://share.google/ostGA1kuBbueUd86o">
-<img src="https://img.shields.io/badge/_Studio_Location-Open_Maps-34A853?style=for-the-badge&logo=googlemaps&logoColor=white">
+<img src="https://img.shields.io/badge/_Studio_Location-Open_Maps-34A820?style=for-the-badge&logo=googlemaps&logoColor=white">
 </a>
 
 </p>
