@@ -9,13 +9,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Namma MPF — Our Memories, Forever Preserved" },
+      { title: "Namma MPF — Our Memories, Preserved Forever" },
       {
         name: "description",
         content:
           "A premium, cinematic platform for delivering wedding photographs, films and guest memories — wrapped in an experience as elegant as the day itself.",
       },
-      { property: "og:title", content: "Namma MPF — Our Memories, Forever Preserved" },
+      { property: "og:title", content: "Namma MPF — Our Memories, Preserved Forever" },
       {
         property: "og:description",
         content:

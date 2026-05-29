@@ -27,7 +27,7 @@ export function Hero() {
         <div className="divider-gold animate-fade-up delay-200 mx-auto my-8 w-40" />
 
         <p className="animate-fade-up delay-200 max-w-2xl font-display text-2xl italic text-foreground/90 md:text-3xl">
-          Our Memories, Forever Preserved
+          Our Memories, Preserved Forever
         </p>
 
         <p className="animate-fade-up delay-300 mt-6 max-w-xl text-base text-foreground/70 md:text-lg">
