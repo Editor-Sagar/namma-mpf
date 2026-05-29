@@ -33,7 +33,7 @@ export function Hero() {
 
         <p className="animate-fade-up delay-300 mt-6 max-w-xl text-base text-foreground/70 md:text-lg">
           A premium platform for delivering your wedding photographs, cinematic films
-          and timeless albums — wrapped in an experience as elegant as the day itself.
+          and timeless albums, wrapped in an experience as elegant as the day itself.
         </p>
 
         <div className="animate-fade-up delay-400 mt-12 flex flex-wrap items-center justify-center gap-4">

@@ -1,6 +1,6 @@
 import heroImage from "@/assets/hero-wedding.jpg";
 
-// Demo gallery — replace with real client uploads once backend is wired.
+// Demo gallery, replace with real client uploads once backend is wired.
 export type GalleryPhoto = {
   id: string;
   title: string;
@@ -40,7 +40,7 @@ export const demoFilms: Film[] = [
   {
     id: "f1",
     title: "The Wedding Film",
-    description: "A cinematic retelling of the entire day — from haldi to vidaai.",
+    description: "A cinematic retelling of the entire day, from haldi to vidaai.",
     duration: "08:24",
     poster: heroImage,
     src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
@@ -56,7 +56,7 @@ export const demoFilms: Film[] = [
   {
     id: "f3",
     title: "Sangeet Highlights",
-    description: "Music, dance and laughter — every spark of the evening in motion.",
+    description: "Music, dance and laughter, every spark of the evening in motion.",
     duration: "05:47",
     poster: unsplash("photo-1530023367847-a683933f4172"),
     src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",

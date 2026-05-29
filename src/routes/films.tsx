@@ -7,7 +7,7 @@ import { demoFilms, type Film } from "@/lib/demoMedia";
 export const Route = createFileRoute("/films")({
   head: () => ({
     meta: [
-      { title: "Films — Namma MPF" },
+      { title: "Films, Namma MPF" },
       {
         name: "description",
         content:
@@ -36,7 +36,7 @@ function FilmsPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/70">
             Stream in the highest quality your connection allows, or download the
-            original master file to keep — exactly as the filmmaker delivered it.
+            original master file to keep, exactly as the filmmaker delivered it.
           </p>
           <div className="divider-gold mx-auto mt-6 w-32" />
         </div>

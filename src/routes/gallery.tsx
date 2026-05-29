@@ -7,11 +7,11 @@ import { demoPhotos, type GalleryPhoto } from "@/lib/demoMedia";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Namma MPF" },
+      { title: "Gallery, Namma MPF" },
       {
         name: "description",
         content:
-          "Your private wedding gallery — view, download and relive every photograph in full quality.",
+          "Your private wedding gallery, view, download and relive every photograph in full quality.",
       },
     ],
   }),

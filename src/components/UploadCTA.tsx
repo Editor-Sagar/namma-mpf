@@ -11,7 +11,7 @@ export function UploadCTA() {
             Share what your <span className="text-gradient-gold italic">heart</span> captured
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-foreground/80">
-            Guests can upload photos, videos and wishes — adding their perspective to the
+            Guests can upload photos, videos and wishes, adding their perspective to the
             couple's official album, beautifully and privately.
           </p>
           <a

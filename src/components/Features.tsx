@@ -21,7 +21,7 @@ const features = [
   },
   {
     title: "Family Sharing",
-    desc: "Private invites for hosts and guests — share your day without sharing the internet.",
+    desc: "Private invites for hosts and guests, share your day without sharing the internet.",
     icon: "✦",
   },
   {
