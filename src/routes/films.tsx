@@ -7,7 +7,7 @@ import { demoFilms, type Film } from "@/lib/demoMedia";
 export const Route = createFileRoute("/films")({
   head: () => ({
     meta: [
-      { title: "Films, Namma MPF" },
+      { title: "Films · Namma MPF" },
       {
         name: "description",
         content:

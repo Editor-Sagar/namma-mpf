@@ -7,7 +7,7 @@ import { demoPhotos, type GalleryPhoto } from "@/lib/demoMedia";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery, Namma MPF" },
+      { title: "Gallery · Namma MPF" },
       {
         name: "description",
         content:
