@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Features } from "@/components/Features";
-import { UploadCTA } from "@/components/UploadCTA";
+import { ClosingCTA } from "@/components/UploadCTA";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
@@ -34,7 +34,7 @@ function Index() {
         <Hero />
         <About />
         <Features />
-        <UploadCTA />
+        <ClosingCTA />
       </main>
       <SiteFooter />
     </div>
