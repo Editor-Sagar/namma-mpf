@@ -10,18 +10,18 @@ const features = [
     icon: "▶",
   },
   {
-    title: "Guest Memory Collection",
-    desc: "Let loved ones contribute their photos, videos and heartfelt wishes in one place.",
-    icon: "♡",
-  },
-  {
-    title: "Album Selection",
+    title: "Curated Album Selection",
     desc: "Mark your favourites with a tap. Your designer receives a curated, ordered set.",
     icon: "✶",
   },
   {
+    title: "Full Quality Downloads",
+    desc: "Save original master files of every photograph and film, exactly as delivered.",
+    icon: "⤓",
+  },
+  {
     title: "Family Sharing",
-    desc: "Private invites for hosts and guests — share your day without sharing the internet.",
+    desc: "Private invites for hosts and guests. Share your day without sharing the internet.",
     icon: "✦",
   },
   {
