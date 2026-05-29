@@ -16,7 +16,7 @@
 <img src="https://img.shields.io/badge/_Studio_Location-Open_Maps-34A820?style=for-the-badge&logo=googlemaps&logoColor=white">
 </a>
 
-# ⚡ 
+#  
 
 ```text
 ╔══════════════════════════════════════════════════════════════╗
