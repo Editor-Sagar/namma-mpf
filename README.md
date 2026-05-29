@@ -16,7 +16,184 @@
 <img src="https://img.shields.io/badge/_Studio_Location-Open_Maps-34A820?style=for-the-badge&logo=googlemaps&logoColor=white">
 </a>
 
-#  
+#  ## 🚀 Namma MPF Boot Sequence
+
+```rust
+fn main() {
+
+    println!("Initializing Namma MPF...");
+
+    load_gallery_engine();
+
+    load_film_archive();
+
+    load_album_designer();
+
+    load_memory_protocol();
+
+    println!("Status: ONLINE");
+}
+```
+
+---
+
+## 🎬 Wedding Rendering Engine
+
+```go
+package main
+
+func main() {
+
+    CaptureMoments()
+
+    EditStories()
+
+    ColorGrade()
+
+    DesignAlbums()
+
+    DeliverMemories()
+}
+```
+
+---
+
+## ❤️ Memory Preservation Protocol
+
+```python
+while True:
+
+    capture_moments()
+
+    preserve_emotions()
+
+    archive_memories()
+
+    deliver_happiness()
+```
+
+---
+
+## ☁️ MPF Cloud Core
+
+```typescript
+class MemoryEngine {
+
+    preserve(memory:string){
+
+        return `${memory} stored forever`;
+
+    }
+
+}
+
+const mpf = new MemoryEngine();
+
+mpf.preserve("Wedding Story");
+```
+
+---
+
+## 📸 Photographer Console
+
+```bash
+$ connect camera
+
+✓ RAW Capture Enabled
+
+✓ Wedding Mode Enabled
+
+✓ Candid Detection Enabled
+
+✓ Emotion Tracking Enabled
+
+✓ Storytelling Ready
+```
+
+---
+
+## 🎞️ Film Editor Mode
+
+```javascript
+const timeline = [
+
+    "Wedding Teaser",
+
+    "Highlights Film",
+
+    "Reception Film",
+
+    "Full Event",
+
+    "Cinematic Story"
+
+];
+
+timeline.forEach(renderFilm);
+```
+
+---
+
+## ⚡ Namma MPF Architecture
+
+```text
+Bride & Groom
+       │
+       ▼
+   Namma MPF
+       │
+       ▼
+ Gallery Engine
+       │
+       ▼
+ Memory Archive
+       │
+       ▼
+ Forever
+```
+
+---
+
+## 🧠 Founder Logic
+
+```c
+#include <stdio.h>
+
+int main() {
+
+    while(1){
+
+        Dream();
+
+        Build();
+
+        Create();
+
+        Inspire();
+
+    }
+
+}
+```
+
+---
+
+## 🔥 Infinite Loop
+
+```javascript
+while(true){
+
+    Capture();
+
+    Create();
+
+    Inspire();
+
+    Preserve();
+
+}
+```
+
 
 ```text
 ╔══════════════════════════════════════════════════════════════╗
