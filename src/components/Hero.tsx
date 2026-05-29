@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-wedding.jpg";
 
 export function Hero() {
@@ -27,7 +28,7 @@ export function Hero() {
         <div className="divider-gold animate-fade-up delay-200 mx-auto my-8 w-40" />
 
         <p className="animate-fade-up delay-200 max-w-2xl font-display text-2xl italic text-foreground/90 md:text-3xl">
-          Our Memories, Forever Preserved
+          Our Memories, Preserved Forever
         </p>
 
         <p className="animate-fade-up delay-300 mt-6 max-w-xl text-base text-foreground/70 md:text-lg">
@@ -36,18 +37,18 @@ export function Hero() {
         </p>
 
         <div className="animate-fade-up delay-400 mt-12 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#features"
+          <Link
+            to="/gallery"
             className="group rounded-full bg-gradient-gold px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[oklch(0.20_0.09_16)] shadow-luxury transition-all hover:scale-[1.03] hover:gold-glow"
           >
             View Gallery
-          </a>
-          <a
-            href="#features"
+          </Link>
+          <Link
+            to="/films"
             className="rounded-full border border-[var(--gold)]/50 px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[var(--gold-light)] transition-all hover:bg-[var(--gold)]/10 hover:border-[var(--gold)]"
           >
             Watch Films
-          </a>
+          </Link>
           <a
             href="#upload"
             className="rounded-full glass-card px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:gold-glow"

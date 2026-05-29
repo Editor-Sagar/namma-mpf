@@ -19,20 +19,10 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {[
-            { label: "Gallery", href: "#features" },
-            { label: "Films", href: "#features" },
-            { label: "Albums", href: "#features" },
-            { label: "About", href: "#about" },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]"
-            >
-              {item.label}
-            </a>
-          ))}
+          <Link to="/gallery" className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]">Gallery</Link>
+          <Link to="/films" className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]">Films</Link>
+          <a href="#features" className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]">Albums</a>
+          <a href="#about" className="text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold-light)]">About</a>
         </nav>
 
         <a
