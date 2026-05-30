@@ -13,6 +13,8 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FilmsRouteImport } from './routes/films'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiMSplatRouteImport } from './routes/api/m.$'
+import { Route as ApiMSplatDownloadRouteImport } from './routes/api/m.$.download'
 
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
@@ -34,18 +36,32 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMSplatRoute = ApiMSplatRouteImport.update({
+  id: '/api/m/$',
+  path: '/api/m/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMSplatDownloadRoute = ApiMSplatDownloadRouteImport.update({
+  id: '/download',
+  path: '/download',
+  getParentRoute: () => ApiMSplatRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +69,28 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/films' | '/gallery'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/films'
+    | '/gallery'
+    | '/api/m/$'
+    | '/api/m/$/download'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/films' | '/gallery'
-  id: '__root__' | '/' | '/admin' | '/films' | '/gallery'
+  to: '/' | '/admin' | '/films' | '/gallery' | '/api/m/$' | '/api/m/$/download'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/films'
+    | '/gallery'
+    | '/api/m/$'
+    | '/api/m/$/download'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +98,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   FilmsRoute: typeof FilmsRoute
   GalleryRoute: typeof GalleryRoute
+  ApiMSplatRoute: typeof ApiMSplatRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -99,14 +131,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/m/$': {
+      id: '/api/m/$'
+      path: '/api/m/$'
+      fullPath: '/api/m/$'
+      preLoaderRoute: typeof ApiMSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/m/$/download': {
+      id: '/api/m/$/download'
+      path: '/download'
+      fullPath: '/api/m/$/download'
+      preLoaderRoute: typeof ApiMSplatDownloadRouteImport
+      parentRoute: typeof ApiMSplatRoute
+    }
   }
 }
+
+interface ApiMSplatRouteChildren {
+  ApiMSplatDownloadRoute: typeof ApiMSplatDownloadRoute
+}
+
+const ApiMSplatRouteChildren: ApiMSplatRouteChildren = {
+  ApiMSplatDownloadRoute: ApiMSplatDownloadRoute,
+}
+
+const ApiMSplatRouteWithChildren = ApiMSplatRoute._addFileChildren(
+  ApiMSplatRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   FilmsRoute: FilmsRoute,
   GalleryRoute: GalleryRoute,
+  ApiMSplatRoute: ApiMSplatRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
