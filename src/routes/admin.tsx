@@ -47,8 +47,11 @@ function AdminPage() {
           {tiles.map((t) => (
             <article
               key={t.title}
-              className="glass-card hover-lift group cursor-pointer p-6"
+              className="glass-card hover-lift group relative cursor-pointer p-6"
             >
+              <span className="absolute right-4 top-4 rounded-full border border-[var(--gold)]/30 px-2 py-0.5 text-[9px] uppercase tracking-[0.25em] text-[var(--gold-light)]/70">
+                Soon
+              </span>
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-gold text-xl text-[oklch(0.20_0.09_16)] shadow-luxury">
                 {t.icon}
               </div>
