@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-wedding.jpg";
+import { REVIEW_URL } from "@/lib/contact";
 
 export function Hero() {
   return (
@@ -25,6 +26,10 @@ export function Hero() {
           <span className="text-shimmer">Namma MPF</span>
         </h1>
 
+        <p className="animate-fade-up delay-100 mt-4 text-[11px] uppercase tracking-[0.45em] text-[var(--gold-light)]/85 md:text-sm">
+          Million's Photography &amp; Films
+        </p>
+
         <div className="divider-gold animate-fade-up delay-200 mx-auto my-8 w-40" />
 
         <p className="animate-fade-up delay-200 max-w-2xl font-display text-2xl italic text-foreground/90 md:text-3xl">
@@ -43,12 +48,14 @@ export function Hero() {
           >
             View Gallery
           </Link>
-          <Link
-            to="/films"
+          <a
+            href={REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-[var(--gold)]/50 px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[var(--gold-light)] transition-all hover:bg-[var(--gold)]/10 hover:border-[var(--gold)]"
           >
-            Watch Films
-          </Link>
+            Share Your Million-Dollar Experience
+          </a>
         </div>
 
         <div className="animate-fade-in delay-500 absolute bottom-10 left-1/2 -translate-x-1/2 text-[var(--gold-light)]/60">
