@@ -18,7 +18,7 @@ const folderQuery = (folderId: string) =>
 
 export const Route = createFileRoute("/g/$folderId")({
   head: ({ loaderData }) => {
-    const name = loaderData?.info?.name ?? "Private Gallery";
+    const name = (loaderData as { info?: { name?: string } } | undefined)?.info?.name ?? "Private Gallery";
     return {
       meta: [
         { title: `${name} · Namma MPF` },
