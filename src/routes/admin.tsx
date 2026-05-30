@@ -17,15 +17,16 @@ export const Route = createFileRoute("/admin")({
   component: AdminPage,
 });
 
-const tiles = [
-  { title: "Create Event", desc: "Begin a new wedding archive.", icon: "✦" },
-  { title: "Manage Events", desc: "Edit, archive or delete events.", icon: "❖" },
-  { title: "Upload Photos", desc: "Add client photographs to the gallery.", icon: "❈" },
-  { title: "Upload Films", desc: "Publish cinematic and traditional films.", icon: "▶" },
-  { title: "QR Codes", desc: "Generate gallery and upload QR codes.", icon: "▦" },
-  { title: "Album Selections", desc: "Review the hosts' favourite picks.", icon: "♡" },
-  { title: "Event Access", desc: "Invite hosts and guests privately.", icon: "✶" },
-  { title: "Storage", desc: "Monitor backend storage usage.", icon: "⛁" },
+type Tile = { title: string; desc: string; icon: string; to?: string; soon?: boolean };
+const tiles: Tile[] = [
+  { title: "Upload to Gallery", desc: "Add photos, films & files to a client event.", icon: "❈", to: "/admin/upload" },
+  { title: "Create Event", desc: "Begin a new wedding archive.", icon: "✦", to: "/admin/upload" },
+  { title: "Manage Events", desc: "Edit, archive or delete events.", icon: "❖", soon: true },
+  { title: "Upload Films", desc: "Publish cinematic and traditional films.", icon: "▶", to: "/admin/upload" },
+  { title: "QR Codes", desc: "Generate gallery and upload QR codes.", icon: "▦", soon: true },
+  { title: "Album Selections", desc: "Review the hosts' favourite picks.", icon: "♡", soon: true },
+  { title: "Event Access", desc: "Invite hosts and guests privately.", icon: "✶", soon: true },
+  { title: "Storage", desc: "Monitor backend storage usage.", icon: "⛁", soon: true },
 ];
 
 function AdminPage() {
@@ -44,21 +45,28 @@ function AdminPage() {
         </div>
 
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {tiles.map((t) => (
-            <article
-              key={t.title}
-              className="glass-card hover-lift group relative cursor-pointer p-6"
-            >
-              <span className="absolute right-4 top-4 rounded-full border border-[var(--gold)]/30 px-2 py-0.5 text-[9px] uppercase tracking-[0.25em] text-[var(--gold-light)]/70">
-                Soon
-              </span>
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-gold text-xl text-[oklch(0.20_0.09_16)] shadow-luxury">
-                {t.icon}
-              </div>
-              <h3 className="font-display text-xl text-[var(--gold-light)]">{t.title}</h3>
-              <p className="mt-2 text-xs text-foreground/65">{t.desc}</p>
-            </article>
-          ))}
+          {tiles.map((t) => {
+            const inner = (
+              <>
+                {t.soon && (
+                  <span className="absolute right-4 top-4 rounded-full border border-[var(--gold)]/30 px-2 py-0.5 text-[9px] uppercase tracking-[0.25em] text-[var(--gold-light)]/70">
+                    Soon
+                  </span>
+                )}
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-gold text-xl text-[oklch(0.20_0.09_16)] shadow-luxury">
+                  {t.icon}
+                </div>
+                <h3 className="font-display text-xl text-[var(--gold-light)]">{t.title}</h3>
+                <p className="mt-2 text-xs text-foreground/65">{t.desc}</p>
+              </>
+            );
+            const className = "glass-card hover-lift group relative cursor-pointer p-6 block";
+            return t.to && !t.soon ? (
+              <Link key={t.title} to={t.to} className={className}>{inner}</Link>
+            ) : (
+              <article key={t.title} className={className}>{inner}</article>
+            );
+          })}
         </div>
 
         <div className="mt-20 flex flex-col items-center gap-4">

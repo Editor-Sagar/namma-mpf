@@ -13,6 +13,10 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FilmsRouteImport } from './routes/films'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GFolderIdRouteImport } from './routes/g.$folderId'
+import { Route as AdminUploadRouteImport } from './routes/admin.upload'
+import { Route as ApiMSplatRouteImport } from './routes/api/m.$'
+import { Route as ApiMSplatDownloadRouteImport } from './routes/api/m.$.download'
 
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
@@ -34,39 +38,98 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GFolderIdRoute = GFolderIdRouteImport.update({
+  id: '/g/$folderId',
+  path: '/g/$folderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUploadRoute = AdminUploadRouteImport.update({
+  id: '/upload',
+  path: '/upload',
+  getParentRoute: () => AdminRoute,
+} as any)
+const ApiMSplatRoute = ApiMSplatRouteImport.update({
+  id: '/api/m/$',
+  path: '/api/m/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMSplatDownloadRoute = ApiMSplatDownloadRouteImport.update({
+  id: '/download',
+  path: '/download',
+  getParentRoute: () => ApiMSplatRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/admin/upload': typeof AdminUploadRoute
+  '/g/$folderId': typeof GFolderIdRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/admin/upload': typeof AdminUploadRoute
+  '/g/$folderId': typeof GFolderIdRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/films': typeof FilmsRoute
   '/gallery': typeof GalleryRoute
+  '/admin/upload': typeof AdminUploadRoute
+  '/g/$folderId': typeof GFolderIdRoute
+  '/api/m/$': typeof ApiMSplatRouteWithChildren
+  '/api/m/$/download': typeof ApiMSplatDownloadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/films' | '/gallery'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/films'
+    | '/gallery'
+    | '/admin/upload'
+    | '/g/$folderId'
+    | '/api/m/$'
+    | '/api/m/$/download'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/films' | '/gallery'
-  id: '__root__' | '/' | '/admin' | '/films' | '/gallery'
+  to:
+    | '/'
+    | '/admin'
+    | '/films'
+    | '/gallery'
+    | '/admin/upload'
+    | '/g/$folderId'
+    | '/api/m/$'
+    | '/api/m/$/download'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/films'
+    | '/gallery'
+    | '/admin/upload'
+    | '/g/$folderId'
+    | '/api/m/$'
+    | '/api/m/$/download'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   FilmsRoute: typeof FilmsRoute
   GalleryRoute: typeof GalleryRoute
+  GFolderIdRoute: typeof GFolderIdRoute
+  ApiMSplatRoute: typeof ApiMSplatRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -99,25 +162,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/g/$folderId': {
+      id: '/g/$folderId'
+      path: '/g/$folderId'
+      fullPath: '/g/$folderId'
+      preLoaderRoute: typeof GFolderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/upload': {
+      id: '/admin/upload'
+      path: '/upload'
+      fullPath: '/admin/upload'
+      preLoaderRoute: typeof AdminUploadRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/api/m/$': {
+      id: '/api/m/$'
+      path: '/api/m/$'
+      fullPath: '/api/m/$'
+      preLoaderRoute: typeof ApiMSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/m/$/download': {
+      id: '/api/m/$/download'
+      path: '/download'
+      fullPath: '/api/m/$/download'
+      preLoaderRoute: typeof ApiMSplatDownloadRouteImport
+      parentRoute: typeof ApiMSplatRoute
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminUploadRoute: typeof AdminUploadRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminUploadRoute: AdminUploadRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
+interface ApiMSplatRouteChildren {
+  ApiMSplatDownloadRoute: typeof ApiMSplatDownloadRoute
+}
+
+const ApiMSplatRouteChildren: ApiMSplatRouteChildren = {
+  ApiMSplatDownloadRoute: ApiMSplatDownloadRoute,
+}
+
+const ApiMSplatRouteWithChildren = ApiMSplatRoute._addFileChildren(
+  ApiMSplatRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   FilmsRoute: FilmsRoute,
   GalleryRoute: GalleryRoute,
+  GFolderIdRoute: GFolderIdRoute,
+  ApiMSplatRoute: ApiMSplatRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { REVIEW_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export function ClosingCTA() {
   return (
@@ -26,12 +27,22 @@ export function ClosingCTA() {
             >
               Open the Gallery
             </Link>
-            <Link
-              to="/films"
+            <a
+              href={REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-[var(--gold)]/50 px-10 py-4 text-sm font-semibold uppercase tracking-wider text-[var(--gold-light)] transition-all hover:bg-[var(--gold)]/10"
             >
-              Watch the Films
-            </Link>
+              Share Your Million-Dollar Experience
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-[var(--gold)]/30 px-10 py-4 text-sm font-semibold uppercase tracking-wider text-[var(--gold-light)]/80 transition-all hover:bg-[var(--gold)]/10"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
